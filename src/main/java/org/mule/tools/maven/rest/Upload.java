@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.impl.StaticLoggerBinder;
 
 /**
- * @goal deploy
+ * @goal upload
  * @execute phase="compile"
  * @requiresDirectInvocation true
  * @requiresDependencyResolution runtime
@@ -22,7 +22,7 @@ import org.slf4j.impl.StaticLoggerBinder;
  * @author Mohamed EL HABIB
  * @author Iván Tejedor
  */
-public class Repository extends AbstractMojo {
+public class Upload extends AbstractMojo {
     public static final String DEFAULT_NAME = "MuleApplication";
 
     /**
@@ -49,13 +49,7 @@ public class Repository extends AbstractMojo {
      */
     protected String name;
 
-    /**
-     * The name that the application will be deployed as. Default is
-     * same as ${name}
-     *
-     * @parameter expression="${deploymentName}"
-     */
-    protected String deploymentName;
+    
 
     /**
      * The version that the application will be deployed as. Default is the
@@ -93,11 +87,7 @@ public class Repository extends AbstractMojo {
      */
     protected URL muleApiUrl;
 
-    /**
-     * @parameter expression="${serverGroup}"
-     * @required
-     */
-    protected String serverGroup;
+    
     
     protected MuleRest muleRest;
 
@@ -110,13 +100,8 @@ public class Repository extends AbstractMojo {
 		    logger.info("Name is not set, using default \"{}\"", DEFAULT_NAME);
 		    name = DEFAULT_NAME;
 		}
-		if (deploymentName == null) {
-		    logger.info("DeploymentName is not set, using application name \"{}\"", name);
-		    deploymentName = name;
-		}
 		if (version == null) {
-		    version = new SimpleDateFormat("MM-dd-yyyy-HH:mm:ss").format(Calendar.getInstance()
-			    .getTime());
+		    version = new SimpleDateFormat("MM-dd-yyyy-HH:mm:ss").format(Calendar.getInstance().getTime());
 		    logger.info("Version is not set, using a default of the timestamp: {}", version);
 		}
 		if (username == null || password == null) {
@@ -127,9 +112,6 @@ public class Repository extends AbstractMojo {
 		}
 		if (finalName == null) {
 		    throw new MojoFailureException("finalName not set.");
-		}
-		if (serverGroup == null) {
-		    throw new MojoFailureException("serverGroup not set.");
 		}
 		try {
 		    validateProject(appDirectory);
