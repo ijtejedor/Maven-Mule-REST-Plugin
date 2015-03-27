@@ -24,7 +24,7 @@ Example:
 
 # Calling the plugin #
 
-There is only one goal, deploy. To call the plugin, do the following
+There is only <s>one</s> two goals, deploy and upload. To call the plugin, do the following
 
 	mule-mmc-rest-plugin:deploy
 	
@@ -34,6 +34,13 @@ This goal will
 *	delete an existing deployment having the same application name
 *	create a new deployment this the uploaded archive, with target the given serverGroup
 *	perform a deploy request to make MMC deploy into target server group
+
+
+	mule-mmc-rest-plugin:upload
+	
+This goal will
+*   delete an existing mule application archive from the MMC Repository if version contains "SNAPSHOT"
+*	upload the mule application archive to the MMC Repository
 
 ## Security ##
 In order to post to the Mule Repository, you need only these permissions:
