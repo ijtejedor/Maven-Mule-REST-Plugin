@@ -37,7 +37,7 @@ This goal will
 
 
 	mule-mmc-rest-plugin:upload
-	
+
 This goal will
 *   delete an existing mule application archive from the MMC Repository if version contains "SNAPSHOT"
 *	upload the mule application archive to the MMC Repository
