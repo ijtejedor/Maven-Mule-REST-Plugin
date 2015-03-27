@@ -26,7 +26,7 @@ Example:
 
 There is only <s>one</s> two goals, deploy and upload. To call the plugin, do the following
 
-	mule-mmc-rest-plugin:deploy
+<h3>mule-mmc-rest-plugin:deploy</h3>
 	
 This goal will
 *   delete an existing mule application archive from the MMC Repository if version contains "SNAPSHOT"
@@ -36,8 +36,8 @@ This goal will
 *	perform a deploy request to make MMC deploy into target server group
 
 
-	mule-mmc-rest-plugin:upload
-
+<h3>	mule-mmc-rest-plugin:upload</h3>
+	
 This goal will
 *   delete an existing mule application archive from the MMC Repository if version contains "SNAPSHOT"
 *	upload the mule application archive to the MMC Repository
