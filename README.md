@@ -47,6 +47,7 @@ In order to post to the Mule Repository, you need only these permissions:
 
 *	Repository Read 
 *	Repository Modify
+*	Repository Delete
 
 ## Configuration Options ##
 <table>
